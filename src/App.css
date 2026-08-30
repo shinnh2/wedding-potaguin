@@ -138,3 +138,16 @@ section {
 	font-weight: 700;
 	font-size: 22px;
 }
+
+/* map */
+
+/* blessing */
+
+/* info */
+.info-deco {
+	padding: 16px 0;
+	text-align: center;
+}
+.info-deco img {
+	width: 24px;
+}
