@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Gowun+Dodum&family=Nunito:wght@700&display=swap");
+
+:root {
+	/* tokens */
+	--black: #101010;
+	--off-white: #fdfdfd;
+	/* ui */
+	--color-bg: var(--off-white);
+	--color-main: var(--black);
+	--color-border: rgba(var(--color-main) 0.6);
+	--color-dim: rgba(var(--color-main) 0.04);
+}
+
+.gowun-dodum-regular {
+	font-family: "Gowun Dodum", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+.gowun-batang-regular {
+	font-family: "Gowun Batang", serif;
+	font-weight: 400;
+	font-style: normal;
+}
+.gowun-batang-bold {
+	font-family: "Gowun Batang", serif;
+	font-weight: 700;
+	font-style: normal;
+}
+.nunito-bold {
+	font-family: "Nunito", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 700;
+	font-style: normal;
+}
+
+body {
+	font-family: "Gowun Dodum", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	background: var(--color-bg);
+	line-height: 1.5;
+	font-size: 16px;
+}
+
+/* layout */
+#wrap {
+	width: 100%;
+	max-width: 480px;
+	margin: 0 auto;
+}
+img {
+	width: 100%;
+}
+header {
+	width: 100%;
+	padding: 32px 0;
+	text-align: center;
+	box-sizing: border-box;
+	border-bottom: 1px solid var(--color-main);
+}
+section {
+	padding: 32px 24px;
+	box-sizing: border-box;
+}
+/* visual */
+.visual {
+	padding: 48px 0;
+}
+/* section */
+.title-wrap {
+	padding: 16px 0;
+}
+.title-deco {
+	margin: 0 0 16px 0;
+}
+.title {
+	text-align: center;
+	line-height: 48px;
+	letter-spacing: 6px;
+	font-family: "Nunito", sans-serif;
+	font-weight: 700;
+	font-size: 32px;
+}
+.title-desc {
+	text-align: center;
+	line-height: 28px;
+	font-size: 22px;
+}
+/* invitaion */
+.invitation-descriptions {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+.invitation-descriptions p {
+	text-align: center;
+}
+.invitation-descriptions .date {
+	font-family: "Gowun Batang", serif;
+	font-weight: 700;
+	font-size: 24px;
+	padding: 16px 0 0 0;
+}
+.invitation-descriptions .place {
+	font-size: 20px;
+	padding: 0 0 16px 0;
+}
+.invitation-descriptions .em-info {
+	font-family: "Gowun Batang", serif;
+	font-weight: 700;
+	font-size: 20px;
+	padding: 16px 0 24px 0;
+}
+.deco {
+	width: 100%;
+	padding: 32px 0;
+	text-align: center;
+}
+.deco img {
+	width: 24px;
+}
+.couple-info {
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	gap: 24px;
+}
+.couple-info li {
+	text-align: center;
+}
+.couple-info li span {
+	display: block;
+}
+.couple-info li .name {
+	padding: 8px 0;
+	line-height: 28px;
+	font-family: "Gowun Batang", serif;
+	font-weight: 700;
+	font-size: 22px;
+}
