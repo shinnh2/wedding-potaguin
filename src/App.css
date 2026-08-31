@@ -4,11 +4,12 @@
 	/* tokens */
 	--black: #101010;
 	--off-white: #fdfdfd;
+	--black-rgb: 16, 16, 16;
 	/* ui */
 	--color-bg: var(--off-white);
 	--color-main: var(--black);
-	--color-border: rgba(var(--color-main) 0.6);
-	--color-dim: rgba(var(--color-main) 0.04);
+	--color-border: rgba(var(--black-rgb), 0.6);
+	--color-dim: rgba(var(--black-rgb), 0.04);
 }
 
 .gowun-dodum-regular {
@@ -140,6 +141,49 @@ section {
 }
 
 /* map */
+.map-img-wrap{
+	width: 100%;
+	margin-bottom: 16px;
+}
+.map-link-wrap{
+	display: flex;
+	align-items: center;
+	justify-self: center;
+	gap:8px;
+	margin-bottom: 16px;
+	padding: 12px 0;
+}
+.map-link{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 32px;
+	padding: 0 12px;
+	color:var(--color-main);
+	border:1px solid var(--color-main);
+	border-radius: 32px;
+	width: fit-content;
+	text-decoration: none;
+}
+.map-info{}
+.map-info-item{
+	margin-bottom: 16px;
+}
+.map-info-item-title{
+	display: flex;
+	align-items: center;
+	margin-bottom: 8px;
+	line-height: 28px;
+	font-family: "Gowun Batang", serif;
+	font-weight: 700;
+	font-size: 20px;	
+}
+.map-info-item-title svg{
+	width: 24px;
+	height: 24px;
+	margin-right: 4px;
+	color:var(--color-main);
+}
 
 /* blessing */
 
