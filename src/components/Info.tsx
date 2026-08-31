@@ -1,11 +1,21 @@
 import { useState } from "react";
 
+const INVITATION_URL = "https://shinnh2.github.io/wedding-potaguin/";
+const OG_IMAGE_URL = "https://shinnh2.github.io/wedding-potaguin/og-image.jpg";
+const KAKAO_JS_KEY = "cf6ccecf383b1fd2fe0b0e9bca229883";
+
+const SHARE_TITLE = "송인규 ♥ 신나현 결혼합니다!";
+const SHARE_DESCRIPTION = "2026.11.21.(토) 결혼식에 초대합니다.";
+
+// 카카오톡 인앱 브라우저는 Web Share API를 지원하지 않는다
+const isKakaoInAppBrowser = () => /KAKAOTALK/i.test(navigator.userAgent);
+
 function Info() {
 	const [isCopied, setIsCopied] = useState(false);
 
 	const handleCopyLink = async () => {
 		try {
-			await navigator.clipboard.writeText("https://shinnh2.github.io/wedding-potaguin/");
+			await navigator.clipboard.writeText(INVITATION_URL);
 			setIsCopied(true);
 			setTimeout(() => setIsCopied(false), 3000);
 		} catch {
@@ -13,20 +23,56 @@ function Info() {
 		}
 	};
 
-	const handleShare = async () => {
-		if (!navigator.share) {
-			handleCopyLink();
-			return;
-		}
+	// 카카오톡 안에서는 SDK로 공유한다
+	const shareViaKakao = () => {
+		const kakao = window.Kakao;
+		if (!kakao) return false;
+
 		try {
-			await navigator.share({
-				title: "송인규 ♥ 신나현 결혼합니다!",
-				text: "결혼식에 초대합니다.",
-				url: "https://shinnh2.github.io/wedding-potaguin/",
+			if (!kakao.isInitialized()) kakao.init(KAKAO_JS_KEY);
+			kakao.Share.sendDefault({
+				objectType: "feed",
+				content: {
+					title: SHARE_TITLE,
+					description: SHARE_DESCRIPTION,
+					imageUrl: OG_IMAGE_URL,
+					link: { mobileWebUrl: INVITATION_URL, webUrl: INVITATION_URL },
+				},
+				buttons: [
+					{
+						title: "청첩장 보기",
+						link: { mobileWebUrl: INVITATION_URL, webUrl: INVITATION_URL },
+					},
+				],
 			});
-		} catch (err) {
-			if ((err as Error).name === "AbortError") return;
-			alert("공유에 실패했습니다.");
+			return true;
+		} catch {
+			return false;
+		}
+	};
+
+	const handleShare = async () => {
+		if (isKakaoInAppBrowser() && shareViaKakao()) return;
+
+		if (navigator.share) {
+			try {
+				await navigator.share({
+					title: SHARE_TITLE,
+					text: SHARE_DESCRIPTION,
+					url: INVITATION_URL,
+				});
+				return;
+			} catch (err) {
+				if ((err as Error).name === "AbortError") return;
+			}
+		}
+
+		// 공유를 지원하지 않으면 링크 복사로 대체한다
+		try {
+			await navigator.clipboard.writeText(INVITATION_URL);
+			alert("링크를 복사했습니다. 대화방에 붙여넣어 공유해 주세요.");
+		} catch {
+			alert("공유에 실패했습니다. 주소창의 링크를 직접 복사해 주세요.");
 		}
 	};
 
