@@ -84,9 +84,9 @@ function Info() {
 			<p className="info-desc">
 				본 결혼식은 결혼 예배로 드려집니다.
 				<br />
-				하객 여러분의 양해 부탁드립니다.
+				예식이 평소보다 조금 더 길어질 수 있는 점
 				<br />
-				감사합니다.
+				너른 양해 부탁드립니다.
 			</p>
 			<div className="share-buttons">
 				<button className="share-button" onClick={handleCopyLink}>
