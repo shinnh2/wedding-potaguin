@@ -186,6 +186,72 @@ section {
 }
 
 /* blessing */
+.accordion-item{
+	margin-bottom: 16px;
+}
+.accordion-item-title{
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	min-height: 48px;
+	border-bottom: 1px solid var(--color-main);
+}
+.accordion-item-title .side{
+	font-family: "Gowun Batang", serif;
+	font-weight: 700;
+}
+.accordion-toggle-button{
+	display: flex;
+	width: 24px;
+	height: 24px;
+	margin-left: auto;
+	color:var(--color-main);
+	transition: all 0.3s ease;
+}
+.accordion-item-content{
+	display: grid;
+	grid-template-rows: 0fr;
+	transition: grid-template-rows 0.3s ease;	
+}
+.accordion-item-content-inner{
+	overflow: hidden; /* 이게 없으면 안 접힘 */
+	min-height: 0;	
+}
+.accordion-item.opened .accordion-toggle-button{
+	transform: rotate(180deg);
+}
+.accordion-item.opened .accordion-item-content{
+	grid-template-rows: 1fr;
+}
+.content-item{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 12px 16px;
+	background: rgba(var(--black-rgb), 0.04);
+}
+.content-info .bank{
+	display: flex;
+	align-items: center;
+	gap:8px;
+}
+.button-copy{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap:4px;
+	width: 48px;
+	height: 48px;
+}
+.button-copy svg{
+	width: 24px;
+	height: 24px;
+	color:var(--color-main);
+}
+.button-copy span{
+	font-size: 12px;
+}
 
 /* info */
 .info-deco {
