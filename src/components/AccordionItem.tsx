@@ -11,13 +11,18 @@ function AccordionItem({ side, children }: AccordionItemProps) {
 
 	return (
         <div className={`accordion-item ${isOpen ? "opened" : ""}`}>
-            <div className="accordion-item-title">
+            <button
+                type="button"
+                className="accordion-item-title"
+                aria-expanded={isOpen}
+                onClick={()=>setIsOpen(prev=>!prev)}
+            >
                 <span className="side">{side}</span>
                 <span>마음 전하실 곳</span>
-                <button className="accordion-toggle-button" onClick={()=>setIsOpen(prev=>!prev)}>
+                <span className="accordion-toggle-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
-                </button>
-            </div>
+                </span>
+            </button>
             <div className="accordion-item-content">
                 <div className="accordion-item-content-inner">{children}</div>
             </div>

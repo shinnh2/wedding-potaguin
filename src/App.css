@@ -204,20 +204,30 @@ footer::before{
 	display: flex;
 	align-items: center;
 	gap: 16px;
+	width: 100%;
 	min-height: 48px;
+	padding:0 4px;
 	border-bottom: 1px solid var(--color-main);
+	font: inherit;
+	color: inherit;
+	text-align: left;
 }
 .accordion-item-title .side{
 	font-family: "Gowun Batang", serif;
 	font-weight: 700;
 }
-.accordion-toggle-button{
+.accordion-toggle-icon{
 	display: flex;
+	flex: none;
 	width: 24px;
 	height: 24px;
 	margin-left: auto;
 	color:var(--color-main);
 	transition: all 0.3s ease;
+}
+.accordion-toggle-icon svg{
+	width: 100%;
+	height: 100%;
 }
 .accordion-item-content{
 	display: grid;
@@ -228,7 +238,8 @@ footer::before{
 	overflow: hidden; /* 이게 없으면 안 접힘 */
 	min-height: 0;	
 }
-.accordion-item.opened .accordion-toggle-button{
+.accordion-item.opened .accordion-toggle-icon{
+	display: block;
 	transform: rotate(180deg);
 }
 .accordion-item.opened .accordion-item-content{
