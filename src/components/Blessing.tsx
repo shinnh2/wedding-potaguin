@@ -31,10 +31,10 @@ function Blessing() {
 						<p className="name">신성호</p>
 						<p className="bank">
 							<span>국민은행</span>
-							<span>111-222-333333</span>
+							<span>653625-01-038302</span>
 						</p>
 					</div>
-					<ButtonCopy copyText="국민은행 111-222-333333"/>
+					<ButtonCopy copyText="국민은행 653625-01-038302"/>
 				</div>
 				<div className="content-item">
 					<div className="content-info">

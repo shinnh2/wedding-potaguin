@@ -46,6 +46,7 @@ function Intro({ onDone }: IntroProps) {
 			</p> */}
 			<p className="intro-desc">
 				2026.11.21.<br/>
+				토요일 낮 12시<br/><br/>
 				송인규 ♥ 신나현의<br/>
 				결혼식에 초대합니다.
 			</p>

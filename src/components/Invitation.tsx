@@ -9,7 +9,7 @@ function Invitaion() {
 				<p className="title-desc">초대합니다</p>
 			</div>
 			<div className="invitation-descriptions">
-				<p className="date">2026.11.21.토</p>
+				<p className="date">2026.11.21.(토)<br/> 낮 12시</p>
 				<p className="place">명성교회 샬롬아트홀</p>
 				<p className="em-info">
 					송인규, 신나현
