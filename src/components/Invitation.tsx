@@ -36,13 +36,17 @@ function Invitaion() {
 			</div>
 			<ul className="couple-info">
 				<li>
-					<span>故 송기섭 ・ 윤영엽</span>
-					<span>아들</span>
+					<span>故 송기섭</span>
+					<span className="mid-dot">・</span>
+					<span>윤영엽(안순)</span>
+					<span className="with_gap">아들</span>
 					<span className="name">송인규</span>
 				</li>
 				<li>
-					<span>신성호 ・ 박성숙</span>
-					<span>딸</span>
+					<span>신성호</span>
+					<span className="mid-dot">・</span>
+					<span>박성숙</span>
+					<span className="with_gap">딸</span>
 					<span className="name">신나현</span>
 				</li>
 			</ul>

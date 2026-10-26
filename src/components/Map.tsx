@@ -62,6 +62,7 @@ function Map() {
 						- 구리암사대교 → 롯데캐슬퍼스트아파트 → 명일역 앞 사거리에서 좌회전
 						→ 400M직진 명성교회
 					</dd>
+					<dd className="caption">* 명성교회 내에 주차공간이 있습니다.</dd>
 				</dl>
 			</div>
 		</section>

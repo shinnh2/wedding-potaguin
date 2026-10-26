@@ -5,11 +5,31 @@
 	--black: #101010;
 	--off-white: #fdfdfd;
 	--black-rgb: 16, 16, 16;
+	--off-white-rgb: 253, 253, 253;
 	/* ui */
+	color-scheme: light dark;
 	--color-bg: var(--off-white);
 	--color-main: var(--black);
-	--color-border: rgba(var(--black-rgb), 0.6);
-	--color-dim: rgba(var(--black-rgb), 0.04);
+	--color-main-rgb: var(--black-rgb);
+	--color-border: rgba(var(--color-main-rgb), 0.6);
+	--color-dim: rgba(var(--color-main-rgb), 0.04);
+	--color-dim-border: rgba(var(--color-main-rgb), 0.1);
+}
+
+/* dark mode */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-bg: var(--black);
+		--color-main: var(--off-white);
+		--color-main-rgb: var(--off-white-rgb);
+	}
+	a {
+		color: var(--color-main);
+	}
+	/* 흑백 선 그림 이미지 반전 */
+	img {
+		filter: invert(1);
+	}
 }
 
 .gowun-dodum-regular {
@@ -39,6 +59,7 @@ body {
 	font-weight: 400;
 	font-style: normal;
 	background: var(--color-bg);
+	color: var(--color-main);
 	line-height: 1.5;
 	font-size: 16px;
 }
@@ -140,6 +161,7 @@ footer::before{
 	gap: 24px;
 }
 .couple-info li {
+	flex:1;
 	text-align: center;
 }
 .couple-info li span {
@@ -151,6 +173,13 @@ footer::before{
 	font-family: "Gowun Batang", serif;
 	font-weight: 700;
 	font-size: 22px;
+}
+.couple-info li .mid-dot{
+	height: 8px;
+	line-height: 8px;
+}
+.couple-info li .with_gap{
+	padding:10px 0 0 0;
 }
 
 /* map */
@@ -194,6 +223,10 @@ footer::before{
 	height: 24px;
 	margin-right: 4px;
 	color:var(--color-main);
+}
+.map-info-item .caption{
+	padding-top: 12px;
+	font-size: 14px;
 }
 
 /* blessing */
@@ -250,7 +283,11 @@ footer::before{
 	align-items: center;
 	justify-content: space-between;
 	padding: 12px 16px;
-	background: rgba(var(--black-rgb), 0.04);
+	background: var(--color-dim);
+	border-top:1px solid var(--color-dim-border);
+}
+.content-item:first-child{
+	border-top:0 none;
 }
 .content-info .bank{
 	display: flex;
