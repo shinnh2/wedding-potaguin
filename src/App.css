@@ -32,6 +32,15 @@
 	}
 }
 
+/* high contrast: 강제 배경색 위에서도 검은 선이 보이도록 흰 배경 */
+@media (forced-colors: active), (prefers-contrast: more) {
+	img {
+		forced-color-adjust: none;
+		filter: none;
+		background: #fff;
+	}
+}
+
 .gowun-dodum-regular {
 	font-family: "Gowun Dodum", sans-serif;
 	font-weight: 400;
